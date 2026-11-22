@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Check a system map: the ten chapters and the first reading of one company.
 
-    python check_map.py {company}            check {company}/chapters/ and {company}/reading.md
+    python check_map.py {company}            check {company}/chapters/, and {company}/reading.md when it exists
     python check_map.py {company} --final    also refuse a reading whose status line still says draft
     python check_map.py {company} --chapters-only
+
+The reading is optional. When setup.md has the row '| First reading | yes |', a missing reading.md is a fault.
 
 The labels of a reading in another language are read from setup.md in the folder above {company}
 (or the file given with --setup). Python 3 and its standard library only.
@@ -135,6 +137,17 @@ def read_labels(setup):
     return labels, alt
 
 
+def reading_wanted(setup):
+    """True when setup.md has the row '| First reading | yes |'."""
+    if not setup or not Path(setup).is_file():
+        return False
+    for line in Path(setup).read_text(encoding="utf-8").splitlines():
+        cells = [c.strip().lower() for c in line.strip().strip("|").split("|")]
+        if len(cells) == 2 and cells[0] == "first reading":
+            return cells[1].startswith("yes")
+    return False
+
+
 def has_label(text, key, labels, alt, start=False):
     for lab in (labels[key], alt.get(key)):
         if not lab:
@@ -228,8 +241,13 @@ def main():
     a = ap.parse_args()
     company = Path(a.company)
     faults, bank = check_chapters(company / "chapters")
-    if not a.chapters_only:
-        setup = Path(a.setup) if a.setup else company.resolve().parent / "setup.md"
+    setup = Path(a.setup) if a.setup else company.resolve().parent / "setup.md"
+    wants_reading = reading_wanted(setup)
+    has_reading = (company / "reading.md").is_file()
+    if wants_reading and not has_reading and not a.chapters_only:
+        faults.append("setup.md asks for the first reading, and there is no reading.md")
+    check_it = has_reading and not a.chapters_only
+    if check_it:
         labels, alt = read_labels(setup)
         faults += check_reading(company / "reading.md", bank, labels, alt, a.final)
     for f in faults:
@@ -237,7 +255,7 @@ def main():
     if faults:
         print(f"{len(faults)} fault(s)")
         sys.exit(2)
-    print("OK  the chapters" + ("" if a.chapters_only else " and the reading") + " pass")
+    print("OK  the chapters" + (" and the reading" if check_it else "") + " pass")
 
 
 if __name__ == "__main__":

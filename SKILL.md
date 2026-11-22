@@ -1,6 +1,6 @@
 ---
 name: system-map
-description: "Maps how a company works, from its name and website: ten Markdown chapters of sourced facts, then a first reading in plain words that ends on the decision in front of the company, its options and who pays for each. Use when the user asks to map, read, diagnose or understand a company, its market or its strategy, or says 'run the system map for {company} at {url}'."
+description: "Maps how a company works, from its name and website: ten Markdown chapters of sourced facts, the world view other skills draw from. On request it adds a first reading in plain words that ends on the decision in front of the company, its options and who pays for each. Use when the user asks to map, read, diagnose or understand a company, its market or its strategy, or says 'run the system map for {company} at {url}'."
 license: Apache-2.0
 metadata:
   author: prioric
@@ -20,7 +20,9 @@ metadata:
 ## What it makes
 
 1. **The world view.** Ten Markdown chapters in `{company}/chapters/`. Each says how one part of the company works: its market, its buyers, its competitors, what it owns, what it can do, what limits it, how it is run, where its money goes, what it says about itself, and the rules of its trade. Every fact sits in an Evidence bullet that ends on its source and date.
-2. **The first reading.** One page, `{company}/reading.md`, in eight parts. It tells what is going on at the company in plain words, shows where the facts pull against each other, and ends on the decision in front of a named body, with the options and the cost of each.
+2. **The first reading, when `setup.md` asks for it.** One page, `{company}/reading.md`, in eight parts. It tells what is going on at the company in plain words, shows where the facts pull against each other, and ends on the decision in front of a named body, with the options and the cost of each.
+
+The chapters are the main output. Other skills, such as a system overview, read them as their input. The reading is cut from the chapters, and it is thin wherever the public sources are thin.
 
 [references/north_star.md](references/north_star.md) describes both outputs and the five rules. Read it whole before anything else.
 
@@ -50,7 +52,7 @@ Follow `process.md`. It always produces these files:
 
 - `{company}/notes.md`: what was read, with dates; the company's own language; the known gaps.
 - `{company}/chapters/01_context.md` … `10_sector_rules.md`, in the form of [references/chapters.md](references/chapters.md), from `{skill}/assets/chapter_template.md`.
-- `{company}/reading.md`, in the form of [references/reading.md](references/reading.md), from `{skill}/assets/reading_template.md`.
+- `{company}/reading.md`, only when `setup.md` says `First reading | yes`, in the form of [references/reading.md](references/reading.md), from `{skill}/assets/reading_template.md`.
 
 ### 4. Check
 
@@ -62,11 +64,11 @@ Fix every fault it names and run it again, as often as it takes. Stop only when 
 
 ### 5. Second read
 
-When `setup.md` names a second model, send it the reading and the chapters with the prompt in [references/second_read.md](references/second_read.md). Fix lists 1, 2, 3, 5 and 6. Give list 4 to the person beside the reading. Run the check again after the fixes. Write one line per check and per read to `{company}/checks.md`.
+When `setup.md` names a second model, send it the reading and the chapters with the prompt in [references/second_read.md](references/second_read.md). With no reading, it reads the chapters alone, with the chapter prompt there. Fix lists 1, 2, 3, 5 and 6. Give list 4 to the person beside the reading. Run the check again after the fixes. Write one line per check and per read to `{company}/checks.md`.
 
 ### 6. Hand over
 
-Give the person `reading.md` and one question: "Is this what is going on at this company?" Beside it, in three lines: the decision and who makes it, what each option costs, and the second reader's strongest left-out explanation.
+With no reading, give the person the ten chapters, the known gaps from `notes.md`, and one question: "Is anything wrong or missing in these chapters?" With a reading, give the person `reading.md` and one question: "Is this what is going on at this company?" Beside it, in three lines: the decision and who makes it, what each option costs, and the second reader's strongest left-out explanation.
 
 The reading opens with `Status: draft, not checked by a person`. When the person has checked it, they change the line to `Status: checked by {name} on {date}`, or tell you to. `check_map.py {company} --final` fails while the line still says draft.
 

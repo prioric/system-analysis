@@ -11,6 +11,7 @@ Written on {date}. The skill reads this file on every run and asks nothing. Edit
 | Python | {the version, or none} |
 | Reading language | {language} |
 | Run | {quick / deep} |
+| First reading | {yes / no} |
 
 ## Labels in the reading language
 

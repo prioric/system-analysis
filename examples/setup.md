@@ -11,6 +11,7 @@ Written on 10 November 2026. The skill reads this file on every run and asks not
 | Python | 3.12 |
 | Reading language | English |
 | Run | deep |
+| First reading | yes |
 
 ## Writing rules
 

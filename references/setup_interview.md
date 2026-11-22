@@ -4,7 +4,7 @@ Run it once, when `setup.md` is missing from the working folder. Ask one questio
 
 Write the answers to `setup.md` from `{skill}/assets/setup_template.md`. Show the finished file to the person in one message. Later runs read it and ask nothing. The person can edit it at any time.
 
-## The six questions
+## The seven questions
 
 1. **Which AI tool do you use for this?** For example Claude Code, Codex, Gemini CLI, Cursor or another agent. The answer tells you which commands you can run.
 
@@ -25,5 +25,7 @@ Write the answers to `setup.md` from `{skill}/assets/setup_template.md`. Show th
 6. **Quick run or deep run?**
    - **Quick:** the company's website, its latest annual report or filing, and one year of news. About an hour of agent time.
    - **Deep:** the website two menu levels deep, five years of filings, the competitors' websites and filings, and two years of news. Several hours.
+
+7. **Do you also want the first reading, a one-page summary in plain words?** The chapters are the main output. The reading is cut from them and can be thin where the public sources are thin. Default: no. Another skill, such as a system overview, can draw a page from the chapters instead.
 
 At the end, ask once: "Do you have writing rules of your own? Paste them or say none." Put them in `setup.md` under "Writing rules".

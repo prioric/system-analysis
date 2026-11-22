@@ -45,6 +45,21 @@ Return nothing else.
 Judge nothing about the company. Judge the reading against the chapters.
 ```
 
+## The chapter prompt, when there is no reading
+
+```
+You read ten chapters about {company}. Each fact ends on its source in square brackets. Open the
+sources you can reach and return three lists. Quote the bullet you mean in each item. Return
+nothing else.
+
+1. Facts the named source does not say, or says with another figure, date or scope.
+2. Bullets whose source cannot be opened or found.
+3. Sentences a stranger must read twice, each with a plain rewrite, and any actor written without
+   a name.
+```
+
+Fix lists 1 and 3 in the chapters. Move a fact from list 2 under Unknowns, or keep it and name the gap in `notes.md`.
+
 ## What to do with the answer
 
 - Lists 1, 2 and 3: fix the sentence. When the chapter is wrong, fix the chapter first, then the reading.

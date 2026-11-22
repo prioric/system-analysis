@@ -28,7 +28,7 @@ Read the ten chapters and nothing else. Hold pairs of facts against each other:
 
 Keep a pull when the head of the company would say "yes, that is our problem", when a competitor's name in its place makes the sentence false, and when no rule in the Sector rules chapter explains it away. Keep two or three, the ones where both sides are well sourced and the most turns on them. For each, write who carries its cost and by when. Keep this list in `notes.md`.
 
-## 4. Write the reading
+## 4. Write the reading, when `setup.md` asks for it
 
 Cut the reading from the chapters and the pulls, in the form of `{skill}/references/reading.md`. Part 7 needs the body that decides, from the "Who decides" list in the Operating model chapter, and two to four options with what each costs and who carries it.
 

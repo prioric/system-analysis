@@ -1,16 +1,16 @@
 # The north star
 
-A person names a company and gives its website. At the end they hold two things they can read in half an hour: ten chapters of facts about how the company works, and one page that says what is going on there and what decision it faces.
+A person names a company and gives its website. At the end they hold ten chapters of facts about how the company works. When they ask for it, they also hold one page that says what is going on there and what decision it faces.
 
 ## The world view
 
 Ten chapters, one Markdown file each. A chapter rebuilds how one part of the company works, from the evidence alone. It carries facts, each with its source and date. It carries no conclusion and no advice. The person can open any chapter and follow any fact back to the page it came from.
 
-The chapters come first, and the reading is cut from them. When the reading and a chapter disagree on a fact, the chapter wins: fix the chapter if it is wrong, then fix the reading.
+The chapters are the main output, and other skills read them as their input. The reading is cut from them when the person asks for it. When the reading and a chapter disagree on a fact, the chapter wins: fix the chapter if it is wrong, then fix the reading.
 
 [chapters.md](chapters.md) has the ten chapters and their form.
 
-## The first reading
+## The first reading, optional
 
 One page in eight parts. It reads like a colleague explaining the company over dinner: the market, the rules of the trade, who works with whom, what the company has and what limits it, where the facts pull against each other, and the decision in front of a named body, with the options and what each costs.
 
