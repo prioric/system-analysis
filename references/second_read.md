@@ -17,6 +17,8 @@ The model gets one prompt with three parts: the prompt below with the company fi
 | `claude -p` | `claude -p < {company}/second_read_pack.md` |
 | `gemini -p` | `gemini --skip-trust -p "Follow the instructions in the text on standard input." < {company}/second_read_pack.md` |
 
+The `<` sends the file on standard input in bash, zsh and the Windows command prompt. PowerShell has no `<`. There, pipe the file in instead: `Get-Content -Raw {company}/second_read_pack.md | codex exec --skip-git-repo-check -`, and the same for the other commands.
+
 Codex refuses to run outside a git folder unless it gets `--skip-git-repo-check`. Gemini refuses a folder it has not been told to trust unless it gets `--skip-trust`.
 | another command | the way the person described in the interview |
 
