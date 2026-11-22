@@ -1,4 +1,4 @@
-# My process for a system map
+# My process for a system analysis
 
 Written by the agent on 10 November 2026, from the sample process and `setup.md`. Approved by the person on 10 November 2026.
 

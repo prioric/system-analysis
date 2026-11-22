@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check a system map: the ten chapters and the first reading of one company.
+"""Check a system analysis: the ten chapters and the first reading of one company.
 
     python check_map.py {company}            check {company}/chapters/, and {company}/reading.md when it exists
     python check_map.py {company} --final    also refuse a reading whose status line still says draft
