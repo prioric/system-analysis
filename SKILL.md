@@ -1,6 +1,6 @@
 ---
-name: system-map
-description: "Maps how a company works, from its name and website: ten Markdown chapters of sourced facts, the world view other skills draw from. On request it adds a first reading in plain words that ends on the decision in front of the company, its options and who pays for each. Use when the user asks to map, read, diagnose or understand a company, its market or its strategy, or says 'run the system map for {company} at {url}'."
+name: prioric-system-analysis
+description: "Maps how a company works, from its name and website: ten Markdown chapters of sourced facts, the world view other skills draw from. On request it adds a first reading in plain words that ends on the decision in front of the company, its options and who pays for each. Use when the user asks to map, read, diagnose or understand a company, its market or its strategy, or says 'run the system analysis for {company} at {url}'."
 license: Apache-2.0
 metadata:
   author: prioric

@@ -1,4 +1,4 @@
-# System map
+# System analysis
 
 An AI agent skill that maps how a company works, from its name and its website. It makes the world view other skills draw from, and on request a one-page reading:
 
@@ -11,17 +11,17 @@ The skill follows the open [Agent Skills](https://agentskills.io) format: a `SKI
 
 ## Install
 
-Copy this folder into the folder your agent reads skills from, under the name `system-map`. For Claude Code:
+Copy this folder into the folder your agent reads skills from, under the name `prioric-system-analysis`. For Claude Code:
 
 ```
-git clone https://github.com/prioric/system-map.git ~/.claude/skills/system-map
+git clone https://github.com/prioric/prioric-system-analysis.git ~/.claude/skills/prioric-system-analysis
 ```
 
 For another agent, copy the folder where that agent finds its skills, or point the agent at `SKILL.md`.
 
 ## First run
 
-Ask your agent: "Run the system map for {company} at {website}."
+Ask your agent: "Run the system analysis for {company} at {website}."
 
 On the first run the agent asks seven short questions, one at a time:
 
