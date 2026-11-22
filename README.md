@@ -14,7 +14,7 @@ The skill follows the open [Agent Skills](https://agentskills.io) format: a `SKI
 Copy this folder into the folder your agent reads skills from, under the name `prioric-system-analysis`. For Claude Code:
 
 ```
-git clone https://github.com/prioric/prioric-system-analysis.git ~/.claude/skills/prioric-system-analysis
+git clone https://github.com/prioric/system-analysis.git ~/.claude/skills/prioric-system-analysis
 ```
 
 For another agent, copy the folder where that agent finds its skills, or point the agent at `SKILL.md`.
